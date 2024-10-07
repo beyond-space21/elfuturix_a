@@ -137,39 +137,37 @@ body{
 }
 
 #site .card{
-  width: fit-content;
-  border-radius: 20px;
-  margin: 30px;
-  height: fit-content;
-  padding: 10px;
-  background-color: rgb(0, 0, 0);
-  position: relative;
-  display: flex;
-  color: aliceblue;
-  cursor: pointer;
+  width: 250px; /* Set the width of the box */
+  height: 400px; /* Set the height of the box */
+  background-color: #d7fff4; /* Set the background color of the box */
+  border: 1px solid #ccc; /* Add a border around the box */
+  display: block; /* Display the box as a block element */
+  margin: 20px 30px;
+  border-radius: 30px;
+ 
 }
 
 #site .card:hover{
   top:  -5px;
-  background-color: rgb(0, 52, 98);
+  background-color: rgb(206 215 88);
 }
 
 #site .card .event_phto{
-  height: 100px;
-  width: 100px;
+  height: 300px;
+  width: 250px;
   border-radius: 30px;
   border: solid,rgb(0, 0, 0),1px;
 }
 
 #site .card .hed{
-  margin-left: 10px;
+  margin-left: 20px;
   margin-top: 10px;
   font-size: x-large;
-  color: rgb(0, 255, 208);
+  color: rgb(0 0 0);
 }
 #site .card .about{
   font-size: small;
-  color: rgb(170, 170, 170);
+  color: rgb(65 62 62);
 }
 
 #site .heading{
@@ -193,6 +191,7 @@ body{
   width: 100%;
   height: calc(100vh - 150px);
 }
+
 
 .menu{
   display: none;
