@@ -20,9 +20,111 @@
         },
 
         {
-            "title": "DRONE DYNAMICS CHALLENGE SESION 2",
+            "title": "PRODUCT XPO",
+            "start": "2024-11-09T08:30:00",
+            "end": "2024-11-09T16:00:00"
+        }
+        {
+            "title": "PAPER PRESENTATION",
+            "start": "2024-11-09T08:30:00",
+            "end": "2024-11-09T16:00:00"
+        },
+        
+        {
+            "title": "MAZE MASTER BOT CHALLENGE",
+            "start": "2024-11-09T07:00:00",
+            "end": "2024-11-09T10:00:00"
+        },
+
+        
+        {
+            "title": "FAST TRACK LINE FOLLOWER BOT",
+            "start": "2024-11-09T14:30:00",
+            "end": "2024-11-09T17:00:00"
+        },
+
+        {
+            "title": "ROBO SOCCOR",
             "start": "2024-11-09T14:30:00",
             "end": "2024-11-09T17:00:00"
         }
+        {
+            "title": "CIRCUIT INNOVATOR'S CONTEST",
+            "start": "2024-11-09T07:00:00",
+            "end": "2024-11-09T10:00:00"
+        },
+
+        
+        {
+            "title": "WEB WIZARDS SHOWDOWN",
+            "start": "2024-11-09T14:30:00",
+            "end": "2024-11-09T17:00:00"
+        },
+
+        {
+            "title": "DATACRAFT PRESENTATION",
+            "start": "2024-11-09T14:30:00",
+            "end": "2024-11-09T17:00:00"
+        }
+        {
+            "title": "CAD MAESTRO CHALLENGE",
+            "start": "2024-11-09T07:00:00",
+            "end": "2024-11-09T10:00:00"
+        },
+
+        
+        {
+            "title": "CODER'S ARENA",
+            "start": "2024-11-09T14:30:00",
+            "end": "2024-11-09T17:00:00"
+        },
+
+        {
+            "title": "IPL AUCTION",
+            "start": "2024-11-09T14:30:00",
+            "end": "2024-11-09T17:00:00"
+        }
+         {
+            "title": "CINEMATIC QUIZ",
+            "start": "2024-11-09T07:00:00",
+            "end": "2024-11-09T10:00:00"
+        },
+
+        
+        {
+            "title": "BRIDGE BUILDING",
+            "start": "2024-11-09T14:30:00",
+            "end": "2024-11-09T17:00:00"
+        },
+
+        {
+            "title": "MR/MS INVESTIGATOR",
+            "start": "2024-11-09T14:30:00",
+            "end": "2024-11-09T17:00:00"
+        }
+         {
+            "title": "WORKSHOP - PCB DESGINING",
+            "start": "2024-11-09T07:00:00",
+            "end": "2024-11-09T10:00:00"
+        },
+
+        
+        {
+            "title": "WORKSHOP - CYBER SECURITY",
+            "start": "2024-11-09T14:30:00",
+            "end": "2024-11-09T17:00:00"
+        },
+
+        {
+            "title": "WORKSHOP - AR/VR ",
+            "start": "2024-11-09T14:30:00",
+            "end": "2024-11-09T17:00:00"
+        }
+         {
+            "title": "WORKSHOP - GENERAL - UNPARALLELED EXPERIENCE OF LEARNING, NETWORKING AND DIGITALIZING",
+            "start": "2024-11-09T14:30:00",
+            "end": "2024-11-09T17:00:00"
+        },
+
     ]
 }
