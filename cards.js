@@ -71,6 +71,8 @@ function page_show(from, to, hed = "") {
 
     if (to[0] == '/') {
         to = to.substring(1)
+        console.log(to);
+        
         document.getElementById("frame").innerHTML = `<div class="heading"></div><iframe id="frm_cont" src="${to}" frameborder="0"></iframe>`
         to = "frame"
         frame.getElementsByClassName('heading')[0].innerHTML = hed
