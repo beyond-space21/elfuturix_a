@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
     "events":[
         {
@@ -26,3 +27,161 @@
         }
     ]
 }
+=======
+{
+    "events":[
+        {
+            "title": "INAGURATION",
+            "start": "2024-11-09T08:00:00",
+            "end": "2024-11-09T08:30:00"
+        },
+        
+        {
+            "title": "DRONE DYNAMICS CHALLENGE SESSION 1",
+            "start": "2024-11-09T07:00:00",
+            "end": "2024-11-09T10:00:00"
+        },
+
+        
+        {
+            "title": "DRONE DYNAMICS CHALLENGE SESSION 2",
+            "start": "2024-11-09T14:30:00",
+            "end": "2024-11-09T17:00:00"
+        },
+
+        {
+            "title": "PRODUCT XPO",
+            "start": "2024-11-09T08:30:00",
+            "end": "2024-11-09T16:00:00"
+        },
+        {
+            "title": "PAPER PRESENTATION",
+            "start": "2024-11-09T08:30:00",
+            "end": "2024-11-09T16:00:00"
+        },
+        
+        {
+            "title": "MAZE MASTER BOT CHALLENGE",
+            "start": "2024-11-09T13:00:00",
+            "end": "2024-11-09T16:00:00"
+        },
+
+        
+        {
+            "title": "FAST TRACK LINE FOLLOWER BOT",
+            "start": "2024-11-09T09:00:00",
+            "end": "2024-11-09T12:00:00"
+        },
+
+        {
+            "title": "ROBO SOCCOR",
+            "start": "2024-11-09T09:30:00",
+            "end": "2024-11-09T12:30:00"
+        },
+        {
+            "title": "CIRCUIT INNOVATOR'S CONTEST SESSION 1",
+            "start": "2024-11-09T09:30:00",
+            "end": "2024-11-09T12:00:00"
+        },
+
+        
+        {
+            "title": "WEB WIZARDS SHOWDOWN SESSION 1",
+            "start": "2024-11-09T08:30:00",
+            "end": "2024-11-09T12:00:00"
+        },
+
+        {
+            "title": "DATACRAFT PRESENTATION SESSION 1",
+            "start": "2024-11-09T09:00:00",
+            "end": "2024-11-09T11:30:00"
+        },
+        {
+            "title": "CODER'S ARENA SESSION 1",
+            "start": "2024-11-09T10:00:00",
+            "end": "2024-11-09T12:30:00"
+        }, 
+         {
+            "title": "CINEMATIC QUIZ SESSION 1",
+            "start": "2024-11-09T10:00:00",
+            "end": "2024-11-09T12:00:00"
+        },
+        {
+            "title": "MR/MS INVESTIGATOR SESSION 1",
+            "start": "2024-11-09T09:30:00",
+            "end": "2024-11-09T11:30:00"
+        },
+        {
+            "title": "IPL AUCTION",
+            "start": "2024-11-09T13:30:00",
+            "end": "2024-11-09T19:00:00"
+        },
+        {
+            "title": "CAD MAESTRO CHALLENGE",
+            "start": "2024-11-09T09:00:00",
+            "end": "2024-11-09T04:00:00"
+        },
+        
+         {
+            "title": "BRIDGE BUILDING",
+            "start": "2024-11-09T11:00:00",
+            "end": "2024-11-09T13:00:00"
+        },
+        {
+            "title": "CIRCUIT INNOVATOR'S CONTEST SESSION 2",
+            "start": "2024-11-09T14:00:00",
+            "end": "2024-11-09T16:00:00"
+        },
+
+        
+        {
+            "title": "WEB WIZARDS SHOWDOWN SESSION 2",
+            "start": "2024-11-09T13:00:00",
+            "end": "2024-11-09T16:30:00"
+        },
+
+        {
+            "title": "DATACRAFT PRESENTATION SESSION 2",
+            "start": "2024-11-09T13:30:00",
+            "end": "2024-11-09T16:00:00"
+        },
+        {
+            "title": "CODER'S ARENA SESSION 2",
+            "start": "2024-11-09T13:30:00",
+            "end": "2024-11-09T16:00:00"
+        },
+         {
+            "title": "CINEMATIC QUIZ SESSION 2",
+            "start": "2024-11-09T13:30:00",
+            "end": "2024-11-09T15:30:00"
+        },
+        {
+            "title": "MR/MS INVESTIGATOR SESSION 2",
+            "start": "2024-11-09T14:00:00",
+            "end": "2024-11-09T16:00:00"
+        },
+         {
+            "title": "WORKSHOP - PCB DESGINING",
+            "start": "2024-11-09T07:00:00",
+            "end": "2024-11-09T10:00:00"
+        }, 
+        {
+            "title": "WORKSHOP - CYBER SECURITY",
+            "start": "2024-11-09T14:30:00",
+            "end": "2024-11-09T17:00:00"
+        },
+
+        {
+            "title": "WORKSHOP - AR/VR ",
+            "start": "2024-11-09T14:30:00",
+            "end": "2024-11-09T17:00:00"
+        },
+         {
+            "title": "WORKSHOP - GENERAL - UNPARALLELED EXPERIENCE OF LEARNING, NETWORKING AND DIGITALIZING",
+            "start": "2024-11-09T14:30:00",
+            "end": "2024-11-09T17:00:00"
+        }
+
+    ]
+}
+>>>>>>> 967fd8f951fa320ee35f34c7b2c9cd5c33a0014c
