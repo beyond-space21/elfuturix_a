@@ -14,12 +14,24 @@
         ["PRODUCT XPO", "el_futurix/img/thumbs/maze.webp", "Robot should solve a maze", "/el_futurix/projectxpo.html", "Competition"],
         ["MAZE MASTER BOT", "el_futurix/img/thumbs/maze.webp", "Robot should solve a maze", "/el_futurix/mazesolver.html", "Competition"],
         ["FAST TRACK LINE FOLLOWER", "el_futurix/img/thumbs/maze.webp", "Robot should solve a maze", "/el_futurix/linefollow.html", "Competition"],
-        ["DRONE DYNAMIC CHALLENGE", "el_futurix/img/thumbs/maze.webp", "Robot should solve a maze", "/el_futurix/circuit.html", "Competition"],
-        ["ROBO SOCCER", "el_futurix/img/thumbs/maze.webp", "Robot should solve a maze", "/el_futurix/coderarena.html", "Competition"]
+        ["DRONE DYNAMIC CHALLENGE", "el_futurix/img/thumbs/maze.webp", "Robot should solve a maze", "/el_futurix/drone.html", "Competition"],
+        ["ROBO SOCCER", "el_futurix/img/thumbs/maze.webp", "Robot should solve a maze", "/el_futurix/robosoccer.html", "Competition"],
+         ["CIRCUIT INNOVATORS CONTEST ", "el_futurix/img/thumbs/maze.webp", "Robot should solve a maze", "/el_futurix/circuit.html", "Competition"],
+        ["WEB WIZARDS SHOWDOWN", "el_futurix/img/thumbs/maze.webp", "Robot should solve a maze", "/el_futurix/webwizaerd.html", "Competition"],
+        ["DATACRAFT PRESENTATION", "el_futurix/img/thumbs/maze.webp", "Robot should solve a maze", "/el_futurix/datacraft.html", "Competition"],
+        ["CAD MAESTRO CONTEST", "el_futurix/img/thumbs/maze.webp", "Robot should solve a maze", "/el_futurix/cad.html", "Competition"],
+        ["CODER'S ARENA", "el_futurix/img/thumbs/maze.webp", "Robot should solve a maze", "/el_futurix/coderarena.html", "Competition"],
+        ["IPL AUCTION", "el_futurix/img/thumbs/maze.webp", "Robot should solve a maze", "/el_futurix/ipl.html", "Competition"]
+         ["CINEMATIC QUIZ", "el_futurix/img/thumbs/maze.webp", "Robot should solve a maze", "/el_futurix/cinema.html", "Competition"],
+        ["BRIDGE BUILDING", "el_futurix/img/thumbs/maze.webp", "Robot should solve a maze", "/el_futurix/bridgebuilding.html", "Competition"],
+        ["MR./MS. INVESTIGATOR", "el_futurix/img/thumbs/maze.webp", "Robot should solve a maze", "/el_futurix/investigator.html", "Competition"]
     ],
 
     "workshop": [
-        ["Electronics", "el_futurix/img/thumbs/competition.webp", "On building a SBC", "/el_futurix/electronics.html", "Workshop"]
+        ["PCB DESIGNING ", "el_futurix/img/thumbs/competition.webp", "On building a SBC", "/el_futurix/pcbdesign.html", "Workshop"]
+         ["CYBER SECURITY ", "el_futurix/img/thumbs/competition.webp", "On building a SBC", "/el_futurix/cyber.html", "Workshop"]
+         ["AR / VR", "el_futurix/img/thumbs/competition.webp", "On building a SBC", "/el_futurix/arvr.html", "Workshop"]
+         ["GENERAL", "el_futurix/img/thumbs/competition.webp", "On building a SBC", "/el_futurix/general.html", "Workshop"]
     ],
 
     "timeline": "",
