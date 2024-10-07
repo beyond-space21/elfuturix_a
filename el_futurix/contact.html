@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Cards</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .card p {
+            margin: 5px 0;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        .card a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 12px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .card a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Card 1 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/100" alt="John Doe">
+            <h3>John Doe</h3>
+            <p>Designation: Manager</p>
+            <p>Email: john.doe@example.com</p>
+            <p>Phone: +1234567890</p>
+            <a href="mailto:john.doe@example.com">Contact</a>
+        </div>
+        <!-- Card 2 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/100" alt="Jane Smith">
+            <h3>Jane Smith</h3>
+            <p>Designation: Developer</p>
+            <p>Email: jane.smith@example.com</p>
+            <p>Phone: +1234567891</p>
+            <a href="mailto:jane.smith@example.com">Contact</a>
+        </div>
+        <!-- Card 3 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/100" alt="Michael Johnson">
+            <h3>Michael Johnson</h3>
+            <p>Designation: Designer</p>
+            <p>Email: michael.j@example.com</p>
+            <p>Phone: +1234567892</p>
+            <a href="mailto:michael.j@example.com">Contact</a>
+        </div>
+        <!-- Card 4 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/100" alt="Emily Davis">
+            <h3>Emily Davis</h3>
+            <p>Designation: HR Executive</p>
+            <p>Email: emily.d@example.com</p>
+            <p>Phone: +1234567893</p>
+            <a href="mailto:emily.d@example.com">Contact</a>
+        </div>
+        <!-- Card 5 -->
+        <div class="card">
+            <img src="https://via.placeholder.com/100" alt="David Wilson">
+            <h3>David Wilson</h3>
+            <p>Designation: Project Manager</p>
+            <p>Email: david.w@example.com</p>
+            <p>Phone: +1234567894</p>
+            <a href="mailto:david.w@example.com">Contact</a>
+        </div>
+    </div>
+</body>
+</html>
