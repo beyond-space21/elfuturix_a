@@ -3,127 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Cards</title>
+    <title>Contact Card Flip</title>
     <style>
-        * {
-            box-sizing: border-box;
+        @font-face {
+            font-family: sansation;
+            src: url('fonts/sansation.ttf');
         }
 
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: transparent;
+            background-color: black;
+            font-family: sansation, sans-serif;
+            color: white;
         }
 
         .container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid layout */
             gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+            justify-content: center;
+            padding: 50px;
         }
 
-        .card {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s ease;
+        .cont {
+            width: fit-content;
+            margin: auto;
+            perspective: 1000px; /* Perspective to create 3D effect */
         }
 
-        .card:hover {
-            transform: translateY(-10px);
+        .im {
+            width: 300px;
+            height: 250px;
+            position: relative;
+            border-radius: 10px;
+            transition: transform 0.6s; /* Smooth flip animation */
+            transform-style: preserve-3d; /* 3D transformation */
         }
 
-        .card img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 15px;
+        /* Flip effect on hover */
+        .cont:hover .im {
+            transform: rotateY(180deg); /* Flip the card */
         }
 
-        .card h3 {
-            margin: 10px 0;
-            font-size: 1.2rem;
-            color: #333;
+        .front, .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden; /* Hide the back content while on the front */
+            border-radius: 10px;
         }
 
-        .card p {
-            margin: 5px 0;
-            color: #777;
-            font-size: 0.9rem;
+        /* Front of the card */
+        .front {
+            background-size: cover;
+            box-shadow: inset 0px -100px 200px -10px rgba(0, 0, 0, 0.916);
+            display: flex;
+            /* justify-content: center; */
+            align-items: end;
         }
 
-        .card a {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 8px 12px;
-            background-color: #4CAF50;
+        /* Back of the card */
+        .back {
+            background-color: rgba(255, 255, 255, 0.1);
             color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            transform: rotateY(180deg); /* Keep the back rotated */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            /* padding: 10px; */
         }
 
-        .card a:hover {
-            background-color: #45a049;
+        h1, h3, h4 {
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+        }
+
+        h4 {
+            font-size: 1rem;
+        }
+        .ml{
+            margin: 20px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <!-- Card 1 -->
-        <div class="card">
-            <img src="https://via.placeholder.com/100" alt="John Doe">
-            <h3>John Doe</h3>
-            <p>Designation: Manager</p>
-            <p>Email: john.doe@example.com</p>
-            <p>Phone: +1234567890</p>
-            <a href="mailto:john.doe@example.com">Contact</a>
+        <div class="cont">
+            <div class="im">
+                <!-- Front Content -->
+                <div class="front" style="background-image: url('img/thumbs/drone.webp');">
+                    <h1 class="ml">Rajanand J</h1>
+                </div>
+                <!-- Back Content -->
+                <div class="back">
+                    <h3>Website</h3>
+                    <h4>rajanand.cs21@bitsathy.ac.in</h4>
+                    <h4>+91 9976917470</h4>
+                </div>
+            </div>
         </div>
+
         <!-- Card 2 -->
-        <div class="card">
-            <img src="https://via.placeholder.com/100" alt="Jane Smith">
-            <h3>Jane Smith</h3>
-            <p>Designation: Developer</p>
-            <p>Email: jane.smith@example.com</p>
-            <p>Phone: +1234567891</p>
-            <a href="mailto:jane.smith@example.com">Contact</a>
+        <div class="cont">
+            <div class="im">
+                <!-- Front Content -->
+                <div class="front" style="background-image: url('img/thumbs/drone.webp');">
+                    <h1 class="ml">John Doe</h1>
+                </div>
+                <!-- Back Content -->
+                <div class="back">
+                    <h3>Developer</h3>
+                    <h4>john.doe@example.com</h4>
+                    <h4>+91 9876543210</h4>
+                </div>
+            </div>
         </div>
+
         <!-- Card 3 -->
-        <div class="card">
-            <img src="https://via.placeholder.com/100" alt="Michael Johnson">
-            <h3>Michael Johnson</h3>
-            <p>Designation: Designer</p>
-            <p>Email: michael.j@example.com</p>
-            <p>Phone: +1234567892</p>
-            <a href="mailto:michael.j@example.com">Contact</a>
+        <div class="cont">
+            <div class="im">
+                <!-- Front Content -->
+                <div class="front" style="background-image: url('img/thumbs/drone.webp');">
+                    <h1 class="ml">Jane Smith</h1>
+                </div>
+                <!-- Back Content -->
+                <div class="back">
+                    <h3>Designer</h3>
+                    <h4>jane.smith@example.com</h4>
+                    <h4>+91 8765432109</h4>
+                </div>
+            </div>
         </div>
+
         <!-- Card 4 -->
-        <div class="card">
-            <img src="https://via.placeholder.com/100" alt="Emily Davis">
-            <h3>Emily Davis</h3>
-            <p>Designation: HR Executive</p>
-            <p>Email: emily.d@example.com</p>
-            <p>Phone: +1234567893</p>
-            <a href="mailto:emily.d@example.com">Contact</a>
+        <div class="cont">
+            <div class="im">
+                <!-- Front Content -->
+                <div class="front" style="background-image: url('img/thumbs/drone.webp');">
+                    <h1 class="ml">Emily Davis</h1>
+                </div>
+                <!-- Back Content -->
+                <div class="back">
+                    <h3>Project Manager</h3>
+                    <h4>emily.davis@example.com</h4>
+                    <h4>+91 7654321098</h4>
+                </div>
+            </div>
         </div>
+
         <!-- Card 5 -->
-        <div class="card">
-            <img src="https://via.placeholder.com/100" alt="David Wilson">
-            <h3>David Wilson</h3>
-            <p>Designation: Project Manager</p>
-            <p>Email: david.w@example.com</p>
-            <p>Phone: +1234567894</p>
-            <a href="mailto:david.w@example.com">Contact</a>
+        <div class="cont">
+            <div class="im">
+                <!-- Front Content -->
+                <div class="front" style="background-image: url('img/thumbs/drone.webp');">
+                    <h1 class="ml">Michael Johnson</h1>
+                </div>
+                <!-- Back Content -->
+                <div class="back">
+                    <h3>HR Executive</h3>
+                    <h4>michael.johnson@example.com</h4>
+                    <h4>+91 6543210987</h4>
+                </div>
+            </div>
         </div>
     </div>
 </body>
