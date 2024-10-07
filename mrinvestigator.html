@@ -183,13 +183,13 @@
             <img src="img/thumbs/maze.webp" alt="Competition Image">
         </div>
         <div class="description">
-            <h1>CODER ARENA</h1>
+            <h1>MR/MS INVESTIGATOR</h1>
             <p>
                 This is where the competition description goes. You can provide details about the competition, its
                 rules, important dates, judging criteria, and other relevant information. Make sure to keep the
                 description engaging and informative to attract participants.
             </p>
-            <div class="btn">COMING SOON</div>
+            <div class="btn">Register</div>
         </div>
     </div>
 
@@ -225,7 +225,7 @@
         document.getElementById("frm_cv").style.display = 'none'
 
         import { get_details } from './login.js'
-     //   document.getElementsByClassName('btn')[0].onclick = reg_op
+        document.getElementsByClassName('btn')[0].onclick = reg_op
         function reg_op() {
             get_details().then((userDetails) => {
                 if (userDetails) {
