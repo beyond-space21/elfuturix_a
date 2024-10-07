@@ -21,6 +21,27 @@
 
         #calendar {
             height: 100vh;
+            width: 3000px;
+        }
+
+        /* Additional styles for non-overlapping events */
+        .fc-event {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .fc-event-overlap {
+            background-color: red;
+            color: white;
+        }
+        #fc-dom-1{
+            position: fixed;
+            left: 0;
+            font-size: 22px;
+        }
+        .fc-col-header-cell-cushion {
+            color: transparent;
         }
     </style>
 </head>
@@ -40,8 +61,7 @@
                 }
 
                 const json = await response.json();
-                // console.log(json);
-                
+
                 var calendarEl = document.getElementById('calendar');
                 var calendar = new FullCalendar.Calendar(calendarEl, {
                     initialView: 'timeGridDay',
@@ -52,21 +72,24 @@
                         right: ''
                     },
                     height: '100%',
+                    slotEventOverlap: false, // Prevent event overlap
                     initialDate: '2024-11-09',
                     events: json.events,
                     eventDidMount: function(info) {
-            // Check for overlaps and adjust styles
-            var overlaps = calendar.getEvents().filter(event => {
-                return event.id !== info.event.id && 
-                       info.event.start < event.end && 
-                       info.event.end > event.start;
-            });
+                        // Calculate potential overlaps and adjust width if necessary
+                        var overlaps = calendar.getEvents().filter(event => {
+                            return event.id !== info.event.id && 
+                                info.event.start < event.end && 
+                                info.event.end > event.start;
+                        });
 
-            if (overlaps.length > 0) {
-                info.el.style.opacity = 0.7; // Example: Change opacity for overlapping events
-                info.el.classList.add('overlapping-event'); // Custom class for further styling
-            }
-        }
+                        if (overlaps.length > 0) {
+                            info.el.style.width = 'auto'; // Expand width dynamically
+                            info.el.classList.add('fc-event-overlap'); // Custom styling for overlap
+                        } else {
+                            info.el.style.width = '100%'; // Default to full width if no overlap
+                        }
+                    }
                 });
                 calendar.render();
             } catch (error) {
@@ -75,3 +98,5 @@
         }
     </script>
 </body>
+
+</html>
