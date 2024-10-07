@@ -1,276 +1,252 @@
-<!DOCTYPE html>
-<html lang="en">
+@font-face {
+  font-family: sansation;
+  src: url(el_futurix/fonts/sansation.ttf);
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Example</title>
-</head>
-<style>
-    @font-face {
-        font-family: sansation;
-        src: url(fonts/sansation.ttf);
-    }
+html,body{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: sansation;
+  background-color: rgb(0, 0, 0);
+}
 
-    body {
-        background-color: transparent;
-        color: aliceblue;
-        font-family: sansation;
-    }
+body{
+  height: calc(100vh + 5px);
+}
 
-    input {
-        border: solid, white, 0 0 1px 0;
-        background-color: rgba(0, 0, 0, 0.604);
-        border-radius: 10px;
-        height: 30px;
-        padding-left: 15px;
-        width: 250px;
-        color: white;
-        font-size: larger;
-    }
 
-    #submit {
-        width: fit-content;
-    }
+#rendercv{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
 
-    #submit:hover {
-        background-color: azure;
-        color: black;
-        font-weight: 700;
-    }
+#site{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-top: 70px;
+  background-color: transparent;
+}
 
-    #frm_cv {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #00000096;
-        /* padding: 20px; */
-        /* box-sizing: border-box; */
-        /* background-color: #79acffdd; */
-    }
+.top_nav{
+  position: fixed;
+  top: 0;
+  left:0;
+  right:0;
+  margin-right: 150px;
+  height: fit-content;
+  /* background-color: rgb(63, 63, 63); */
+  display: flex;
+  justify-content:space-between;
+}
 
-    #frm_cnt {
-        /* position: fixed; */
-        width: fit-content;
-        /* margin: auto; */
-        margin-top: 50px;
-        padding: 20px;
-        border-radius: 15px;
-        background-color: rgba(0, 0, 0, 0.999);
-        position: relative;
-    }
+.logo{
+  height: 40px;
+  margin-top: 20px;
+  margin-left: 10px;
+  /* margin-right: 5px; */
+}
 
-    #frm_cnt .close {
-        width: fit-content;
-        padding: 5px;
-        border-radius: 5px;
-        background-color: #272727;
-        position: absolute;
-        right: 10px;
-        text-align: end;
-        cursor: pointer;
-    }
+.top_nav .pages{
+  margin: 40px 0 0 0 ;
+  color: aliceblue;
+  font-size: medium;
+  font-weight: 900;
+  cursor: pointer;
+}
 
-    #frm_cnt .close:hover {
-        background-color: #481313;
-    }
+.top_nav .pages:hover{
+  /* color: gold; */
+  text-shadow: 0 0 10px gold, 0 0 15px gold, 0 0 20px gold;
+  border-radius: 10px;
+}
 
-    .container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-        background-color: rgba(61, 61, 61, 0.47);
-        margin: 20px;
-        border-radius: 20px;
-    }
+.profile{
+  margin: 30px 0 0 0 ;
+  position: fixed;
+  right: 20px;
+  top: -10px;
+  display: flex;
+  font-weight: 600;
+  padding: 4px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(43, 42, 42);
+  border-radius: 50px;
+}
 
-    .image {
-        flex: 1;
-        min-width:  500px;
-        max-width: 500px;
-        padding: 20px;
-    }
+.profile .a{
+  margin-top: 10px;
+  font-size: large;
+  margin-left: 5px;
+  position: relative;
+  right: 27px;
+}
 
-    .image img {
-        width: 100%;
-        height: auto;
-        border-radius: 15px;
-    }
+.profile .txt{
+  position: relative;
+  left: 25px ;
+  /* bottom: 1px; */
+}
 
-    .description {
-        flex: 2;
-        padding: 20px;
-    }
+.profile .b{
+  position: relative;
+  height: 10px;
+  width: 90px;
+  background-color: rgb(255, 122, 73);
+  border-radius: 10px 0 35% 10px;
+}
 
-    h1 {
-        color: #ffffff;
-        font-size: 2rem;
-        margin-bottom: 10px;
-    }
+.profile .pic{
+  background-color: rgb(255, 122, 73);
+  height: 40px;
+  width: 40px;
+  /* margin-left: 10px;   */
+  border-radius: 100%;
+}
 
-    p {
-        font-size: 1.2rem;
-        line-height: 1.6;
-        color: #bbbbbb;
-        background-color: #272727;
-        padding: 20px;
-        border-radius: 10px;
-    }
+.curnt{
+  position: fixed;
+  z-index: 1;
+  height: 10px;
+  width: 300px;
+  background-image: linear-gradient(to right, rgb(255, 255, 255) , rgb(118, 118, 118));
+}
 
-    .container .btn {
-        background-color: #eb1010;
-        border-radius: 15px;
-        border-radius: 10px;
-        width: fit-content;
-        padding: 10px;
-        font-size: x-large;
-        cursor: pointer;
-    }
+.curnt .diag_a{
+  position: absolute;
+  right: -10px;
+  height: 10px;
+  width: 10px;
+  background: linear-gradient(135deg, rgb(118, 118, 118) 50%, rgba(0, 0, 0, 0) 50%);
+}
 
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-        .container {
-            flex-direction: column;
-        }
+#site .cards{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  /* max-width: 500px; */
+  height: calc(100vh - 120px);
+  margin-bottom: 100px;  
+  overflow-y: scroll;
+}
 
-        .description {
-            padding: 10px;
-        }
+#site .card{
+  width: 250px; /* Set the width of the box */
+  height: fit-content; /* Set the height of the box */
+  background-color: #d7fff4; /* Set the background color of the box */
+  border: 1px solid #ccc; /* Add a border around the box */
+  display: block; /* Display the box as a block element */
+  margin: 20px 30px;
+  border-radius: 30px;
+ 
+}
 
-        h1 {
-            font-size: 1.8rem;
-        }
+#site .card:hover{
+  top:  -5px;
+  background-color: rgb(206 215 88);
+}
 
-        p {
-            font-size: 1rem;
-        }
-    }
+#site .card .event_phto{
+  height: 300px;
+  width: 250px;
+  border-radius: 30px;
+  border: solid,rgb(0, 0, 0),1px;
+}
 
-    .key{
-        font-size: large;
-        color: rgb(11, 10, 10);
-        font-weight: 900;
-        padding: 10px;
-        background-color: #0f94e6f4;
-        border-radius: 10px;
-        width: fit-content;
-        margin-bottom: 20px;
-    }
-    .val{
+#site .card .hed{
+  margin-left: 20px;
+  margin-top: 10px;
+  font-size: x-large;
+  color: rgb(0 0 0);
+}
+#site .card .about{
+  font-size: small;
+  color: rgb(65 62 62);
+}
 
-        padding: 5px;
-        color: azure;
-        margin-left: auto;
-        margin-top: 10px;
-    }
-</style>
+#site .heading{
+  font-size: xx-large;
+  color: rgb(250, 255, 157);
+  font-weight: 500;
+  margin: 20px 0 0 50px;
+}
 
-<body>
+#site .cont_sites{
+  display: none;
+}
 
-    <div style="display: none;" id="frm_cv">
-        <div id="frm_cnt">
-            <div class="close">X</div>
-            <br>
-            <h1 id="event_name">Register for Maze Solver</h1>
-            <form id="studentForm" action="" method="" onsubmit="validateForm(event)">
-                <!-- Name field -->
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name" placeholder=" Your name" required><br><br>
+#frm_cont{
+  position: fixed;
+  top: 130px;
+  bottom: 0px;
+  /* margin-bottom: 20px; */
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: calc(100vh - 150px);
+}
 
-                <!-- College field -->
-                <label for="college">College:</label><br>
-                <input type="text" id="college" name="college" placeholder=" Your college name" required><br><br>
 
-                <!-- Contact number field -->
-                <label for="contact">Contact Number:</label><br>
-                <input type="tel" id="contact" name="contact" required pattern="[0-9]{10}"
-                    placeholder=" 10 digits"><br><br>
+.menu{
+  display: none;
+  position: fixed;
+  top: 70px;
+  z-index: 2;
+}
 
-                <!-- Submit button -->
-                <input id="submit" type="submit" value="Submit">
-            </form>
-        </div>
-    </div>
+.menu .a, .menu .b, .menu .c{
+  position: relative;
+  top: 20px;
+  left: 20px;
+  height: 4px;
+  width: 30px;
+  background-color: rgb(255, 221, 0);
+  margin: 4px;
+  border-radius: 10px;
+}
 
-    <div class="container">
-        <div class="image">
-            <img src="img/thumbs/maze.webp" alt="Competition Image">
-        </div>
-        <div class="description">
-            <h1>MAZE MASTER BOT </h1>
-            <p>
-                Enter the "Maze Explorer", where tiny robots navigate intricate mazes with precision. Watch as these self-governing marvels navigate their way to victory, demonstrating the combination of strategy and technology. Encourage these tiny explorers as they forge ahead in the field of robotics. Come witness a spectacular display of inventiveness and resourcefulness across the competition lines.
-            </p>
-            <div class="btn">COMING SOON</div>
-            <br>
-            <div class="key">Team size : <span class="val"> 1 - 2 </span></div>
-            <div class="key">Registration Fee : <span class="val"> 449 </span></div>
-            <div class="key">Registration Deadline : <span class="val"> 01 November 2024</span></div>
-            <div class="key"> For Quries :
-                <div class="val">Kavin R V - 6381314154</div>
-                 <div class="val">Gowtham T - 9042416640</div>
-            </div>
-            
-        </div>
-    </div>
 
-    <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-firestore.js"></script>
-    <script type="module">
-        function validateForm(event) {
-            event.preventDefault();
+#menu_pop{
+  display: none;
+  width: fit-content;
+  height: fit-content;
+  /* background-color: rgb(104, 104, 104); */
+  border-radius: 5px;
+  padding: 10px;
+  /* position: fixed; */
+  margin-top: 20px;
+  margin-left: 30px;
+}
 
-            var name = document.getElementById("name").value;
-            var college = document.getElementById("college").value;
-            var contact = document.getElementById("contact").value;
-            var contactPattern = /^[0-9]{10}$/; // Regex pattern for 10-digit numbers
+#menu_pop .menu_elm{
+  text-align: center;
+  margin: 5px 0 5px 0;
+  padding: 5px;
+  border-radius: 10px;
+  color: aliceblue;
+  font-size: larger;
+  background-color: rgb(48, 48, 48);
+}
 
-            // Validate form fields
-            if (name === "" || college === "" || contact === "") {
-                alert("All fields are required!");
-                return false;
-            }
+#menu_pop .menu_elm:hover{
+  background-color: rgb(238, 237, 148);
+  color: black;
+}
 
-            // Validate contact number format
-            if (!contactPattern.test(contact)) {
-                alert("Please enter a valid 10-digit contact number.");
-                return false;
-            }
-
-            alert("Registed successfully!");
-            document.getElementById("frm_cv").style.display = 'none'
-        }
-
-        var rg = document.getElementById("frm_cnt")
-        rg.style.marginLeft = (window.innerWidth - rg.offsetWidth) / 2 + 'px'
-        document.getElementById("frm_cv").style.display = 'none'
-
-        import { get_details } from './login.js'
-       // document.getElementsByClassName('btn')[0].onclick = reg_op
-        function reg_op() {
-            get_details().then((userDetails) => {
-                if (userDetails) {
-                    console.log("user loged in");
-                    console.log(userDetails);
-                    document.getElementById("frm_cv").style.display = 'block'
-                } else {
-                    console.log("No user is signed in.");
-                    alert("login before registering...");
-                }
-            }).catch((error) => {
-                console.error("Error getting user details:", error);
-            });
-        }
-
-        document.getElementsByClassName('close')[0].onclick = reg_cl
-        function reg_cl() {
-            document.getElementById("frm_cv").style.display = 'none'
-        }
-    </script>
-</body>
-<script src="lolita.js"></script>
-</html>
+@media only screen and (max-width: 1000px) {
+  .pages{
+    display: none;
+  }
+  .heading{
+    text-align: end;
+  }
+  .menu{
+    display: block;
+  }
+}
