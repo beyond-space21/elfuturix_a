@@ -10,7 +10,12 @@
     ],
 
     "competitions": [
-        ["Maze solver", "el_futurix/img/thumbs/maze.webp", "Robot should solve a maze", "/el_futurix/mazesolver.html", "Competition"]
+        ["PAPER PRESENTATION", "el_futurix/img/thumbs/maze.webp", "Robot should solve a maze", "/el_futurix/mazesolver.html", "Competition"]
+        ["PRODUCT XPO", "el_futurix/img/thumbs/maze.webp", "Robot should solve a maze", "/el_futurix/mazesolver.html", "Competition"]
+        ["MAZE MASTER BOT", "el_futurix/img/thumbs/maze.webp", "Robot should solve a maze", "/el_futurix/mazesolver.html", "Competition"]
+        ["FAST TRACK LINE FOLLOWER", "el_futurix/img/thumbs/maze.webp", "Robot should solve a maze", "/el_futurix/mazesolver.html", "Competition"]
+        ["DRONE DYNAMIC CHALLENGE", "el_futurix/img/thumbs/maze.webp", "Robot should solve a maze", "/el_futurix/mazesolver.html", "Competition"]
+        ["ROBO SOCCER", "el_futurix/img/thumbs/maze.webp", "Robot should solve a maze", "/el_futurix/mazesolver.html", "Competition"]
     ],
 
     "workshop": [
