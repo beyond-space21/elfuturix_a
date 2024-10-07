@@ -1,33 +1,3 @@
-<<<<<<< HEAD
-{
-    "events":[
-        {
-            "title": "INAGURATION",
-            "start": "2024-11-09T08:00:00",
-            "end": "2024-11-09T08:30:00"
-        },
-        
-        {
-            "title": "DRONE DYNAMICS CHALLENGE SESION 1",
-            "start": "2024-11-09T07:00:00",
-            "end": "2024-11-09T10:00:00"
-        },
-
-        
-        {
-            "title": "DRONE DYNAMICS CHALLENGE SESION 2",
-            "start": "2024-11-09T14:30:00",
-            "end": "2024-11-09T17:00:00"
-        },
-
-        {
-            "title": "DRONE DYNAMICS CHALLENGE SESION 2",
-            "start": "2024-11-09T14:30:00",
-            "end": "2024-11-09T17:00:00"
-        }
-    ]
-}
-=======
 {
     "events":[
         {
@@ -184,4 +154,3 @@
 
     ]
 }
->>>>>>> 967fd8f951fa320ee35f34c7b2c9cd5c33a0014c
