@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Example</title>
+</head>
+<style>
+    @font-face {
+        font-family: sansation;
+        src: url(fonts/sansation.ttf);
+    }
+
+    body {
+        background-color: transparent;
+        color: aliceblue;
+        font-family: sansation;
+    }
+
+    input {
+        border: solid, white, 0 0 1px 0;
+        background-color: rgba(0, 0, 0, 0.604);
+        border-radius: 10px;
+        height: 30px;
+        padding-left: 15px;
+        width: 250px;
+        color: white;
+        font-size: larger;
+    }
+
+    #submit {
+        width: fit-content;
+    }
+
+    #submit:hover {
+        background-color: azure;
+        color: black;
+        font-weight: 700;
+    }
+
+    #frm_cv {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #00000096;
+        /* padding: 20px; */
+        /* box-sizing: border-box; */
+        /* background-color: #79acffdd; */
+    }
+
+    #frm_cnt {
+        /* position: fixed; */
+        width: fit-content;
+        /* margin: auto; */
+        margin-top: 50px;
+        padding: 20px;
+        border-radius: 15px;
+        background-color: rgba(0, 0, 0, 0.999);
+        position: relative;
+    }
+
+    #frm_cnt .close {
+        width: fit-content;
+        padding: 5px;
+        border-radius: 5px;
+        background-color: #272727;
+        position: absolute;
+        right: 10px;
+        text-align: end;
+        cursor: pointer;
+    }
+
+    #frm_cnt .close:hover {
+        background-color: #481313;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background-color: rgba(66, 37, 0, 0.47);
+        margin: 20px;
+        border-radius: 20px;
+    }
+
+    .image {
+        flex: 1;
+        min-width: 300px;
+        max-width: 400px;
+        padding: 10px;
+    }
+
+    .image img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .description {
+        flex: 2;
+        padding: 20px;
+    }
+
+    h1 {
+        color: #ffffff;
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        color: #bbbbbb;
+        background-color: #272727;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .container .btn {
+        background-color: #481313;
+        border-radius: 15px;
+        border-radius: 10px;
+        width: fit-content;
+        padding: 10px;
+        font-size: x-large;
+        cursor: pointer;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column;
+        }
+
+        .description {
+            padding: 10px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+    }
+</style>
+
+<body>
+
+    <div style="display: none;" id="frm_cv">
+        <div id="frm_cnt">
+            <div class="close">X</div>
+            <br>
+            <h1 id="event_name">Register for Maze Solver</h1>
+            <form id="studentForm" action="" method="" onsubmit="validateForm(event)">
+                <!-- Name field -->
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" placeholder=" Your name" required><br><br>
+
+                <!-- College field -->
+                <label for="college">College:</label><br>
+                <input type="text" id="college" name="college" placeholder=" Your college name" required><br><br>
+
+                <!-- Contact number field -->
+                <label for="contact">Contact Number:</label><br>
+                <input type="tel" id="contact" name="contact" required pattern="[0-9]{10}"
+                    placeholder=" 10 digits"><br><br>
+
+                <!-- Submit button -->
+                <input id="submit" type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="image">
+            <img src="img/thumbs/maze.webp" alt="Competition Image">
+        </div>
+        <div class="description">
+            <h1>BRIDGE BUILDING</h1>
+            <p>
+                This is where the competition description goes. You can provide details about the competition, its
+                rules, important dates, judging criteria, and other relevant information. Make sure to keep the
+                description engaging and informative to attract participants.
+            </p>
+            <div class="btn">Register</div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-firestore.js"></script>
+    <script type="module">
+        function validateForm(event) {
+            event.preventDefault();
+
+            var name = document.getElementById("name").value;
+            var college = document.getElementById("college").value;
+            var contact = document.getElementById("contact").value;
+            var contactPattern = /^[0-9]{10}$/; // Regex pattern for 10-digit numbers
+
+            // Validate form fields
+            if (name === "" || college === "" || contact === "") {
+                alert("All fields are required!");
+                return false;
+            }
+
+            // Validate contact number format
+            if (!contactPattern.test(contact)) {
+                alert("Please enter a valid 10-digit contact number.");
+                return false;
+            }
+
+            alert("Registed successfully!");
+            document.getElementById("frm_cv").style.display = 'none'
+        }
+
+        var rg = document.getElementById("frm_cnt")
+        rg.style.marginLeft = (window.innerWidth - rg.offsetWidth) / 2 + 'px'
+        document.getElementById("frm_cv").style.display = 'none'
+
+        import { get_details } from './login.js'
+        document.getElementsByClassName('btn')[0].onclick = reg_op
+        function reg_op() {
+            get_details().then((userDetails) => {
+                if (userDetails) {
+                    console.log("user loged in");
+                    console.log(userDetails);
+                    document.getElementById("frm_cv").style.display = 'block'
+                } else {
+                    console.log("No user is signed in.");
+                    alert("login before registering...");
+                }
+            }).catch((error) => {
+                console.error("Error getting user details:", error);
+            });
+        }
+
+        document.getElementsByClassName('close')[0].onclick = reg_cl
+        function reg_cl() {
+            document.getElementById("frm_cv").style.display = 'none'
+        }
+    </script>
+</body>
+
+</html>

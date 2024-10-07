@@ -1,0 +1,19 @@
+menu pop    -
+navigation
+profile page
+
+registration state
+DB
+registration add member
+
+
+total_trans = {category, subcategory, elements} = 3
+
+
+timeline
+aboutus
+contactus
+committee
+combo
+terms
+
