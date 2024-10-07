@@ -56,8 +56,8 @@ body{
 .top_nav .pages{
   margin: 40px 0 0 0 ;
   color: aliceblue;
-  font-size: small;
-  font-weight: 700;
+  font-size: medium;
+  font-weight: 900;
   cursor: pointer;
 }
 
