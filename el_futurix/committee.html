@@ -1,1 +1,225 @@
-committee
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Card Flip</title>
+    <style>
+        @font-face {
+            font-family: sansation;
+            src: url('fonts/sansation.ttf');
+        }
+
+        body {
+            background-color: transparent;
+            font-family: sansation, sans-serif;
+            color: white;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid layout */
+            gap: 40px;
+            justify-content: center;
+            padding: 50px;
+        }
+
+        .cont {
+            width: fit-content;
+            margin: auto;
+            perspective: 1000px; /* Perspective to create 3D effect */
+        }
+
+        .im {
+            width: 250px;
+            height: 300px;
+            position: relative;
+            border-radius: 10px;
+            transition: transform 0.6s; /* Smooth flip animation */
+            transform-style: preserve-3d; /* 3D transformation */
+        }
+              .cont .im {
+    transition: transform 0.8s ease; /* Adjust the duration as needed */
+}
+
+.cont:hover .im {
+    transform: rotateY(180deg); /* Flip the card */
+}
+
+
+        .front, .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden; /* Hide the back content while on the front */
+            border-radius: 10px;
+        }
+
+        /* Front of the card */
+        .front { 
+            background-size: cover;
+            box-shadow: inset 0px -100px 200px -10px rgba(0, 0, 0, 0.916);
+            display: flex;
+            /* justify-content: center; */
+            align-items: end;
+            font-family: 'Arial', sans-serif;
+             font-size: 20px;
+             color: white;
+             text-shadow: 0 0 10px #000;
+        }
+
+        /* Back of the card */
+        .back {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transform: rotateY(180deg); /* Keep the back rotated */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            /* padding: 10px; */
+        }
+
+        h1, h3, h4 {
+            margin: 0;
+        }
+        
+
+        h1 {
+           
+            margin: 0;
+            color: aqua;
+        padding-bottom: 0.1rem;
+        grid-column: 1;
+         grid-row: 1;
+         z-index: 1;
+         font-family: 'Teko', sans-serif;
+         font-size: 1.4rem;
+         text-transform: uppercase;
+         animation: glow 2s ease-in-out infinite;
+
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 20px #2d9da9;
+  }
+  100% {
+    text-shadow: 0 0 50px #34b3c1, 0 0 50px #4dbbc7;
+  }
+
+}
+
+        h3 {
+            font-size: 1.2rem;
+        }
+        
+
+        h4 {
+            font-size: medium;
+            margin: 0;
+    
+        }
+        .ml{
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Card 1 -->
+        <div class="cont">
+            <div class="im">
+                <!-- Front Content -->
+                <div class="front" style="background-image: url('img/contact/12 (1).webp');">
+                    <div class="ml">
+                        <h1 >Rajanand J</h1>
+                        <h4 >Website</h4>
+                    </div>
+                </div>
+                <!-- Back Content -->
+                <div class="back">
+                    <h3>Website</h3>
+                    <h4>rajanand.cs21@bitsathy.ac.in</h4>
+                    <h4>+91 9976917470</h4>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="cont">
+            <div class="im">
+                <!-- Front Content -->
+                <div class="front" style="background-image: url('img/contact/12 (2).webp');">
+                    <div class="ml">
+                        <h1 >Gowtham</h1>
+                        <h4 >Management</h4>
+                    </div>
+                </div>
+                <!-- Back Content -->
+                <div class="back">
+                    <h3>Website</h3>
+                    <h4>rajanand.cs21@bitsathy.ac.in</h4>
+                    <h4>+91 9976917470</h4>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="cont">
+            <div class="im">
+                <!-- Front Content -->
+                <div class="front" style="background-image: url('img/contact/12 (3).webp');">
+                    <div class="ml">
+                        <h1 >Karthi</h1>
+                        <h4 >Entertiner</h4>
+                    </div>
+                </div>
+                <!-- Back Content -->
+                <div class="back">
+                    <h3>Website</h3>
+                    <h4>rajanand.cs21@bitsathy.ac.in</h4>
+                    <h4>+91 9976917470</h4>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="cont">
+            <div class="im">
+                <!-- Front Content -->
+                <div class="front" style="background-image: url('img/contact/12 (4).webp');">
+                    <div class="ml">
+                        <h1 >tareq</h1>
+                        <h4 >Overall Incharge</h4>
+                    </div>
+                </div>
+                <!-- Back Content -->
+                <div class="back">
+                    <h3>Website</h3>
+                    <h4>rajanand.cs21@bitsathy.ac.in</h4>
+                    <h4>+91 9976917470</h4>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="cont">
+            <div class="im">
+                <!-- Front Content -->
+                <div class="front" style="background-image: url('img/thumbs/drone.webp');">
+                    <div class="ml">
+                        <h1 >Rajanand J</h1>
+                        <h4 >Website</h4>
+                    </div>
+                </div>
+                <!-- Back Content -->
+                <div class="back">
+                    <h3>Website</h3>
+                    <h4>rajanand.cs21@bitsathy.ac.in</h4>
+                    <h4>+91 9976917470</h4>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
