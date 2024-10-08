@@ -137,7 +137,8 @@ body{
 }
 
 #site .card{
-  width: 250px; /* Set the width of the box */ /* Set the height of the box */
+  width: 250px;
+  height: 380px;/* Set the width of the box */ /* Set the height of the box */
   background-color: #d7fff4; /* Set the background color of the box */
   border: 1px solid #ccc; /* Add a border around the box */
   display: block; /* Display the box as a block element */
