@@ -9,7 +9,7 @@
         ["Combo events", "el_futurix/img/thumbs/competition.webp", "", "/el_futurix/Combo.html", "Combo events"]
     ],
 
-    "Technical competitions": [
+    "competitions": [
         ["PRODUCT XPO", "el_futurix/img/thumbs/Product XPO.webp", "Technical", "/el_futurix/projectxpo.html", "Competition"],
         ["PAPER PRESENTATION", "el_futurix/img/thumbs/Paper Presentation.webp", "Technical", "/el_futurix/paperpresentation.html", "Competition"],
         ["FAST TRACK LINE FOLLOWER", "el_futurix/img/thumbs/line follwer.webp", "Technical", "/el_futurix/linefollow.html", "Competition"],
@@ -21,8 +21,6 @@
         ["DATACRAFT PRESENTATION", "el_futurix/img/thumbs/datapresentation.webp", "Technical", "/el_futurix/datacraft.html", "Competition"],
         ["CAD MAESTRO CONTEST", "el_futurix/img/thumbs/cad.webp", "Technical", "/el_futurix/cad.html", "Competition"],
         ["CODER'S ARENA", "el_futurix/img/thumbs/CODER'S ARENA.webp", "Technical", "/el_futurix/coderarena.html", "Competition"],
-    ],
-    "Non Technical competitions": [
         ["IPL AUCTION", "el_futurix/img/thumbs/IPL Auction.webp", "Non Technical", "/el_futurix/ipl.html", "Competition"],
          ["CINEMATIC QUIZ", "el_futurix/img/thumbs/Smart Minds Quiz.webp", "Non Technical", "/el_futurix/cinema.html", "Competition"],
         ["BRIDGE BUILDING", "el_futurix/img/thumbs/BRIDGE BUILDING.webp", "Non Technical", "/el_futurix/bridgebuilding.html", "Competition"],
