@@ -1,12 +1,12 @@
 {
     "home": [
-        ["Competitions", "el_futurix/img/thumbs/competition.webp", "", "competition"],
-        ["Workshops", "el_futurix/img/thumbs/competition.webp", "", "workshop"],
-        ["Time line", "el_futurix/img/thumbs/competition.webp", "", "/el_futurix/timeline.html", "Time line"],
-        ["About us", "el_futurix/img/thumbs/competition.webp", "", "/el_futurix/aboutus.html", ""],
-        ["Contact", "el_futurix/img/thumbs/competition.webp", "", "/el_futurix/contact.html", "Contact"],
-        ["Committee", "el_futurix/img/thumbs/competition.webp", "", "/el_futurix/committee.html", "Committee"],
-        ["Combo events", "el_futurix/img/thumbs/competition.webp", "", "/el_futurix/Combo.html", "Combo events"]
+        ["Competitions", "el_futurix/img/Homepage-20241008T130301Z-001/Homepage/competition.png", "", "competition"],
+        ["Workshops", "el_futurix/img/Homepage-20241008T130301Z-001/Homepage/workshop.png", "", "workshop"],
+        ["Time line", "el_futurix/img/Homepage-20241008T130301Z-001/Homepage/timeline.png", "", "/el_futurix/timeline.html", "Time line"],
+        ["About us", "el_futurix/img/Homepage-20241008T130301Z-001/Homepage/about.png", "", "/el_futurix/aboutus.html", ""],
+        ["Contact", "el_futurix/img/Homepage-20241008T130301Z-001/Homepage/contact.png", "", "/el_futurix/contact.html", "Contact"],
+        ["Committee", "el_futurix/img/Homepage-20241008T130301Z-001/Homepage/committee.png", "", "/el_futurix/committee.html", "Committee"],
+        ["Combo events", "el_futurix/img/Homepage-20241008T130301Z-001/Homepage/combo.png", "", "/el_futurix/Combo.html", "Combo events"]
     ],
 
     "competitions": [
