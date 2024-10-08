@@ -9,14 +9,23 @@
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            background: linear-gradient(135deg, #0f202773, #203a4381, #2c536489);
             color: #fff;
         }
+body {
+  background: linear-gradient(135deg, #0747637a, #203a4361, #2c536426);
+  background-size: 400% 400%;
+  animation: gradient 10s ease-in-out infinite;
+}
 
+
+/* Add a neon glow effect to the header */
+header {
+  text-shadow: 0 0 10px #00ffc3, 0 0 20px #00ffc3, 0 0 30px #00ffc3;
+}
         header {
             text-align: center;
             padding: 50px 20px;
-            background: rgba(0, 0, 0, 0.7);
             color: #00ffc3;
         }
 
@@ -38,7 +47,7 @@
 
         .about-section h2 {
             font-size: 2.5rem;
-            color: #00ffc3;
+            color: #000000;
             margin-bottom: 30px;
             letter-spacing: 3px;
         }
@@ -56,6 +65,8 @@
             margin: 20px;
             font-size: 1.2rem;
             line-height: 1.8;
+            text-align: center;
+            font-weight: bold;
         }
 
         .about-image {
@@ -82,7 +93,7 @@
         .team-section h2 {
             text-align: center;
             font-size: 2.5rem;
-            color: #00ffc3;
+            color: #439783;
             margin-bottom: 40px;
         }
 
@@ -116,10 +127,44 @@
             margin-bottom: 10px;
         }
 
-        .team-member p {
-            font-size: 1rem;
-            color: #e0e0e0;
-        }
+        .about-text p {
+  position: relative; /* add this */
+  transition: color 0.3s ease; /* add this */
+}
+
+.about-text p:hover, .about-text p:focus {
+  color: #00ffc3; /* change text color on hover/focus */
+}
+
+.about-text p::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #074763, #203a43, #2c5364);
+  background-size: 0% 400%;
+  animation: glow 0.5s ease-in ;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.about-text p:hover::before, .about-text p:focus::before {
+  opacity: 1;
+}
+
+@keyframes glow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 10% 10%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
         /* Responsive Design */
         @media (max-width: 900px) {
@@ -141,30 +186,31 @@
 
     <!-- Header Section -->
     <header>
-        <h1>About Us</h1>
-        <p>Get to Know Us Better</p>
+
     </header>
 
     <!-- About Section -->
     <section class="about-section">
-        <h2>Our Journey</h2>
+        <h2>About EL-FUTURIX '24</h2>
         <div class="about-content">
             <div class="about-text">
                 <p>
-                    At Bannari Amman Institute of Technology, we pride ourselves on being a leading force in the education sector. Our journey started with a vision to create an institution where young minds could thrive and develop into innovative leaders and creators. Over the years, we have grown into a nurturing ground for talent, passion, and dreams.
+                    “EL FUTURIX” is a national-level technical Event proudly presented by the Circuit Clusters of Bannari Amman Institute of Technology unitedly Coordinated by the Departments of Electrical and Electronics Engineering, Electronics & Instrumentation Engineering, Electronics & Communication Engineering and Biomedical Engineering in collaboration with the BIT IEEE Student Branch. ‘El-Futurix’ embodies a futuristic vision of innovation and technological advancement, representing the next era of engineering excellence. The term "El" signifies the enduring realms of Everlasting Electronics and Electrical Domains where these cornerstones of modern technology reflects the Elevated pursuit of excellence.
                 </p>
                 <p>
-                    Our team of dedicated educators and professionals work tirelessly to create a learning environment where students not only gain knowledge but also learn how to apply it in real-world scenarios. With a strong focus on holistic development, we encourage creativity, critical thinking, and collaboration.
+                    El-Futurix aims to light the way forward for technological progress and creativity, serving as a beacon for talented individuals across the nation to showcase their ingenuity and passion. We extend a warm invitation to all visionary minds ready to make a lasting impact on the future of technology. Join us at El-Futurix '24, where brilliance meets innovation.
                 </p>
-                <p>
-                    From technology to arts, we integrate a diverse range of disciplines to help our students stay ahead of the curve. Our state-of-the-art facilities and industry partnerships ensure that our students have access to the tools and resources needed to succeed in today’s fast-paced world.
-                </p>
-            </div>
-            <div class="about-image">
-                <img src="campus-photo.jpg" alt="Campus Photo">
-            </div>
+            </div> 
         </div>
+        <div class="about-video">
+            <video width="80%" controls>
+                <source src="el_futurix\img\about\about.mp4.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        
     </section>
+    
 
 </body>
 </html>
