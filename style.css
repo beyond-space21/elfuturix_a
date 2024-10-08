@@ -163,6 +163,7 @@ body{
   margin-left: 20px;
   margin-top: 10px;
   font-size: x-large;
+  font-weight:1000;
   color: rgb(0 0 0);
 }
 #site .card .about{
