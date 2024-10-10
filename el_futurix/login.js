@@ -61,7 +61,10 @@ function get_details() {
     signOut(auth)
         .then(() => {
             console.log("User signed out");
-            document.getElementsByClassName("pic")[0].src = "el_futurix/img/profile_blank.png"; // Clear profile picture
+            document.getElementsByClassName("pic")[0].src = "el_futurix/img/profile_blank.png";
+            document.getElementById("log_in_btn").style.display = "block"
+            document.getElementById("log_out_btn").style.display = "none"
+            document.getElementById("profile_btn").style.display = "none"
         })
         .catch((error) => {
             console.error("Error during sign-out:", error);
