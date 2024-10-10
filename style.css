@@ -148,7 +148,8 @@ body{
 
 #site .card{
   width: 250px;
-  height: 390px;/* Set the width of the box */ /* Set the height of the box */
+  /* height: 390px; */
+  height: fit-content;
   background-color: #d7fff4; /* Set the background color of the box */
   border: 1px solid #ccc; /* Add a border around the box */
   display: block; /* Display the box as a block element */
@@ -167,6 +168,7 @@ body{
   display: flex;
   color: aliceblue;
   cursor: pointer;
+  border:solid #79ebff 1px;
 }
 
 #site .card_ .event_phto{
@@ -232,12 +234,15 @@ body{
   position: fixed;
   top: 70px;
   z-index: 2;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-left: 20px;
 }
 
 .menu .a, .menu .b, .menu .c{
   position: relative;
-  top: 20px;
-  left: 20px;
+  /* top: 20px;
+  left: 20px; */
   height: 4px;
   width: 30px;
   background-color: rgb(255, 221, 0);
@@ -256,21 +261,22 @@ body{
   /* position: fixed; */
   margin-top: 20px;
   margin-left: 30px;
+  background-color: rgb(233, 233, 233);
+  border-radius: 10px;
 }
 
 #menu_pop .menu_elm{
   text-align: center;
   margin: 5px 0 5px 0;
   padding: 5px;
-  border-radius: 10px;
+  border-radius: 5px;
   color: aliceblue;
   font-size: larger;
   background-color: rgb(48, 48, 48);
 }
 
 #menu_pop .menu_elm:hover{
-  background-color: rgb(238, 237, 148);
-  color: black;
+  background-color: rgb(27, 27, 5);
 }
 
 @media only screen and (max-width: 1213px) {

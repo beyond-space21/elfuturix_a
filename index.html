@@ -57,6 +57,7 @@
       <img class="pic" src="el_futurix/img/profile_blank.png" alt="">
     </div>
 
+
     <div id="curnt" class="curnt">
       <div class="diag_a"></div>
     </div>
@@ -98,13 +99,14 @@
       <div class="c"></div>
 
     <div id="menu_pop">
-      <div style="border-top: 0px;" class="menu_elm">Home</div>
-      <div class="menu_elm">Competitions</div>
-      <div class="menu_elm">Workshops</div>
-      <div class="menu_elm">Time line</div>
-      <div class="menu_elm">Abous Us</div>
-      <div class="menu_elm">Contact</div>
-      <div class="menu_elm">Accomodation</div>
+      <div style="border-top: 0px;" class="menu_elm" onclick="page_show(null,'home')" >Home</div>
+      <div class="menu_elm" onclick="page_show(null,'competition')">Competitions</div>
+      <div class="menu_elm" onclick="page_show(null,'workshop')">Workshops</div>
+      <div class="menu_elm" onclick="page_show(null,'/el_futurix/timeline.html','Time line')">Time line</div>
+      <div class="menu_elm" onclick="page_show(null,'/el_futurix/aboutus.html','')">About Us</div>
+      <div class="menu_elm" onclick="page_show(null,'/el_futurix/contact.html','Contact')">Contact</div>
+      <div class="menu_elm" onclick="page_show(null,'/el_futurix/committee.html','Committee')">Committee</div>
+    
   </div>
 
 </div>
