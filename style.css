@@ -154,7 +154,6 @@ body{
   display: block; /* Display the box as a block element */
   margin: 20px 30px;
   border-radius: 30px;
- 
 }
 
 #site .card:hover{
