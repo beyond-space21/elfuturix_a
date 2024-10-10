@@ -27,7 +27,12 @@ cards.workshop.forEach((arr) => {
 
 function card(cont, key) {
     var root = document.createElement('div')
+
+    if(cont == 'home')
+    root.className = 'card_'
+    else
     root.className = 'card'
+
     root.onclick = () => {
         if (key[3][0] == '/') {
             page_show(cur_page, key[3], key[4])
