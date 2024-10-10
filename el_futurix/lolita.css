@@ -14,3 +14,17 @@
   font-weight: 100;
   color: #ffffff;
 }
+
+
+#frm_cnt input{
+  border: none;
+  border-bottom: solid #ffffff 1px;
+  border-radius: 0;
+}
+
+#frm_cnt #submit{
+  border: none;
+  border-radius: 5px;
+  background-color: aquamarine;
+  color: rgb(29, 27, 27);
+}

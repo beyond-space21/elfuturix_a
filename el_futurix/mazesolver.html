@@ -252,7 +252,7 @@
         document.getElementById("frm_cv").style.display = 'none'
 
         import { get_details } from './login.js'
-       // document.getElementsByClassName('btn')[0].onclick = reg_op
+       document.getElementsByClassName('btn')[0].onclick = reg_op
         function reg_op() {
             get_details().then((userDetails) => {
                 if (userDetails) {
