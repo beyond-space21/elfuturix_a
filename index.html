@@ -50,11 +50,16 @@
       <div class="pages" onclick="page_show(null,'/el_futurix/committee.html','Committee')">Committee</div>
     </div>
 
-    <div id="login_btn" class="profile">
+    <div class="profile">
       <div class="txt">
         <div class="a">profile</div>
       </div>
       <img class="pic" src="el_futurix/img/profile_blank.png" alt="">
+      <div class="profile_pop">
+        <div id="profile_btn" style="display: none;" class="elm">Profile</div>
+        <div id="log_in_btn" class="elm">Log in</div>
+        <div id="log_out_btn" style="display: none;" class="elm">Log out</div>
+      </div>
     </div>
 
 
@@ -132,6 +137,7 @@
     document.getElementById("menu_t").style.transform = 'rotate(15deg)'
     document.getElementsByClassName("menu")[0].onclick = menu_cl
   }
+
   function menu_cl(){
     document.getElementById("menu_pop").style.display = 'none'
     document.getElementById("menu_t").style.transform = 'rotate(0deg)'

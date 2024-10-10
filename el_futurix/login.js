@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-analytics.js";
-import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+import { getAuth, signOut, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAekwrpB56A5Kib4H9YSwGMzeQap9ZMJAA",
@@ -16,7 +16,10 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
-const loginBtn = document.getElementById("login_btn"); // Get the button element
+try {
+  document.getElementById("log_in_btn").onclick=login;
+  document.getElementById("log_out_btn").onclick=logout; 
+} catch (error){}
 
 
 function login() {
@@ -25,6 +28,9 @@ function login() {
       const user = result.user;
       console.log("User signed in:", user);
       document.getElementsByClassName("pic")[0].src = user.photoURL
+      document.getElementById("log_in_btn").style.display = "none"
+      document.getElementById("log_out_btn").style.display = "block"
+      document.getElementById("profile_btn").style.display = "block"
     }).catch((error) => {
       console.error("Error during sign-in:", error);
     });
@@ -51,5 +57,15 @@ function get_details() {
     });
   }
 
+  function logout() {
+    signOut(auth)
+        .then(() => {
+            console.log("User signed out");
+            document.getElementsByClassName("pic")[0].src = "el_futurix/img/profile_blank.png"; // Clear profile picture
+        })
+        .catch((error) => {
+            console.error("Error during sign-out:", error);
+        });
+}
 
-export { login, loginBtn, get_details};
+export { login, get_details, logout};
