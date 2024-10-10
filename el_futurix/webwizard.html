@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="lolita.css">
+    <link rel="stylesheet" href="lolita.css">
     <title>Form Example</title>
 </head>
 <style>
@@ -20,7 +20,7 @@
     }
 
     input {
-        border: solid, white, 0 0 1px 0;
+        border: solid white 0 0 1px 0;
         background-color: rgba(0, 0, 0, 0.604);
         border-radius: 10px;
         height: 30px;
@@ -47,15 +47,10 @@
         right: 0;
         bottom: 0;
         background-color: #00000096;
-        /* padding: 20px; */
-        /* box-sizing: border-box; */
-        /* background-color: #79acffdd; */
     }
 
     #frm_cnt {
-        /* position: fixed; */
         width: fit-content;
-        /* margin: auto; */
         margin-top: 50px;
         padding: 20px;
         border-radius: 15px;
@@ -132,7 +127,6 @@
         cursor: pointer;
     }
 
-    /* Responsive adjustments */
     @media (max-width: 768px) {
         .container {
             flex-direction: column;
@@ -170,8 +164,7 @@
 
                 <!-- Contact number field -->
                 <label for="contact">Contact Number:</label><br>
-                <input type="tel" id="contact" name="contact" required pattern="[0-9]{10}"
-                    placeholder=" 10 digits"><br><br>
+                <input type="tel" id="contact" name="contact" required pattern="[0-9]{10}" placeholder=" 10 digits"><br><br>
 
                 <!-- Submit button -->
                 <input id="submit" type="submit" value="Submit">
@@ -193,9 +186,9 @@
             <div class="key">Team size : <span class="val">1 - 2</span></div>
             <div class="key">Registration Fee : <span class="val"> 349/Team of 4 (or) 249/Team of 2 </span></div>
             <div class="key">Registration Deadline: <span class="val"> 02 November </span></div>
-            <div class="key"> For Quries:
+            <div class="key"> For Queries:
                 <div class="val">Vithyavarsha V - 7558144787</div>
-                 <div class="val">Tamilarasu R - 9092272586</div>
+                <div class="val">Tamilarasu R - 9092272586</div>
             </div>
         </div>
     </div>
@@ -211,46 +204,44 @@
             var contact = document.getElementById("contact").value;
             var contactPattern = /^[0-9]{10}$/; // Regex pattern for 10-digit numbers
 
-            // Validate form fields
             if (name === "" || college === "" || contact === "") {
                 alert("All fields are required!");
                 return false;
             }
 
-            // Validate contact number format
             if (!contactPattern.test(contact)) {
                 alert("Please enter a valid 10-digit contact number.");
                 return false;
             }
 
-            alert("Registed successfully!");
-            document.getElementById("frm_cv").style.display = 'none'
+            alert("Registered successfully!");
+            document.getElementById("frm_cv").style.display = 'none';
         }
 
-        var rg = document.getElementById("frm_cnt")
-        rg.style.marginLeft = (window.innerWidth - rg.offsetWidth) / 2 + 'px'
-        document.getElementById("frm_cv").style.display = 'none'
+        var rg = document.getElementById("frm_cnt");
+        rg.style.marginLeft = (window.innerWidth - rg.offsetWidth) / 2 + 'px';
+        document.getElementById("frm_cv").style.display = 'none';
 
-        import { get_details } from './login.js'
-       // document.getElementsByClassName('btn')[0].onclick = reg_op
+        import { get_details } from './login.js';
+
+        document.getElementsByClassName('btn')[0].onclick = reg_op;
         function reg_op() {
             get_details().then((userDetails) => {
                 if (userDetails) {
-                    console.log("user loged in");
-                    console.log(userDetails);
-                    document.getElementById("frm_cv").style.display = 'block'
+                    console.log("User logged in");
+                    document.getElementById("frm_cv").style.display = 'block';
                 } else {
                     console.log("No user is signed in.");
-                    alert("login before registering...");
+                    alert("Login before registering...");
                 }
             }).catch((error) => {
                 console.error("Error getting user details:", error);
             });
         }
 
-        document.getElementsByClassName('close')[0].onclick = reg_cl
+        document.getElementsByClassName('close')[0].onclick = reg_cl;
         function reg_cl() {
-            document.getElementById("frm_cv").style.display = 'none'
+            document.getElementById("frm_cv").style.display = 'none';
         }
     </script>
 </body>
