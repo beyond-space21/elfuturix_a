@@ -17,6 +17,18 @@
             /* height: 100vh; */
         }
 
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two columns: one for form, one for image */
+            max-width: 1200px;
+            width: 100%;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            gap: 40px;
+        }
+
         h2 {
             text-align: center;
             color: #333;
@@ -24,15 +36,8 @@
         }
 
         form {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            max-width: 800px;
-            width: 100%;
-            margin: 20px;
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr; /* Single column for form fields */
             gap: 20px;
         }
 
@@ -82,17 +87,30 @@
         .checkbox-group {
             display: flex;
             align-items: center;
-            grid-column: 1 / -1; /* Span full width */
+        }
+
+        .image-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         /* Responsive styles */
         @media (max-width: 768px) {
-            form {
-                grid-template-columns: 1fr;
+            .container {
+                grid-template-columns: 1fr; /* Stack form and image vertically */
             }
 
-            input[type="submit"],
             h2,
+            input[type="submit"],
             .checkbox-group {
                 grid-column: 1 / -1;
             }
@@ -101,66 +119,74 @@
 </head>
 <body>
 
-    <form action="/submit-form" method="POST">
-        <h2>Student Information Form</h2>
+    <div class="container">
+        <!-- Form Section -->
+        <form action="/submit-form" method="POST">
+            <h2>Profile</h2>
 
-        <div class="form-group">
-            <label for="student-name">Student Name:</label>
-            <input type="text" id="student-name" name="student-name" required>
+            <div class="form-group">
+                <label for="student-name">Student Name:</label>
+                <input type="text" id="student-name" name="student-name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="salutation">Salutation:</label>
+                <select id="salutation" name="salutation" required>
+                    <option value="">--Select--</option>
+                    <option value="Mr.">Mr.</option>
+                    <option value="Ms.">Ms.</option>
+                    <option value="Dr.">Dr.</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="designation">Designation:</label>
+                <input type="text" id="designation" name="designation" required>
+            </div>
+
+            <div class="form-group">
+                <label for="college-name">College Name:</label>
+                <input type="text" id="college-name" name="college-name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="stream-of-study">Stream of Study:</label>
+                <input type="text" id="stream-of-study" name="stream-of-study" required>
+            </div>
+
+            <div class="form-group">
+                <label for="course-department">Course/Department:</label>
+                <input type="text" id="course-department" name="course-department" required>
+            </div>
+
+            <div class="form-group">
+                <label for="year-of-study">Year of Study:</label>
+                <input type="number" id="year-of-study" name="year-of-study" min="1" max="5" required>
+            </div>
+
+            <div class="form-group">
+                <label for="whatsapp-number">WhatsApp Number:</label>
+                <input type="tel" id="whatsapp-number" name="whatsapp-number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="alt-contact-number">Alternate Contact Number:</label>
+                <input type="tel" id="alt-contact-number" name="alt-contact-number">
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="assurance" name="assurance" required>
+                <label for="assurance">I assure that all the above mentioned details are true to my knowledge</label>
+            </div>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <!-- Image Section -->
+        <div class="image-section">
+            <img src="event-image.jpg" alt="Event Image">
         </div>
-
-        <div class="form-group">
-            <label for="salutation">Salutation:</label>
-            <select id="salutation" name="salutation" required>
-                <option value="">--Select--</option>
-                <option value="Mr.">Mr.</option>
-                <option value="Ms.">Ms.</option>
-                <option value="Dr.">Dr.</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="designation">Designation:</label>
-            <input type="text" id="designation" name="designation" required>
-        </div>
-
-        <div class="form-group">
-            <label for="college-name">College Name:</label>
-            <input type="text" id="college-name" name="college-name" required>
-        </div>
-
-        <div class="form-group">
-            <label for="stream-of-study">Stream of Study:</label>
-            <input type="text" id="stream-of-study" name="stream-of-study" required>
-        </div>
-
-        <div class="form-group">
-            <label for="course-department">Course/Department:</label>
-            <input type="text" id="course-department" name="course-department" required>
-        </div>
-
-        <div class="form-group">
-            <label for="year-of-study">Year of Study:</label>
-            <input type="number" id="year-of-study" name="year-of-study" min="1" max="5" required>
-        </div>
-
-        <div class="form-group">
-            <label for="whatsapp-number">WhatsApp Number:</label>
-            <input type="tel" id="whatsapp-number" name="whatsapp-number" required>
-        </div>
-
-        <div class="form-group">
-            <label for="alt-contact-number">Alternate Contact Number:</label>
-            <input type="tel" id="alt-contact-number" name="alt-contact-number">
-        </div>
-
-        <div class="checkbox-group">
-            <input type="checkbox" id="assurance" name="assurance" required>
-            <label for="assurance">I assure that all the above mentioned details are true to my knowledge</label>
-        </div>
-
-        <input type="submit" value="Submit">
-    </form>
+    </div>
 
 </body>
 </html>

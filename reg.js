@@ -1,3 +1,7 @@
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+import { firestore } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+
 const firebaseConfig = {
     apiKey: "AIzaSyAekwrpB56A5Kib4H9YSwGMzeQap9ZMJAA",
     authDomain: "elfuturix-10101.firebaseapp.com",
@@ -8,8 +12,8 @@ const firebaseConfig = {
     measurementId: "G-6Q55QC0CPF"
 };
 
-const app = firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
+const app = initializeApp(firebaseConfig);
+const db = firestore();
 
 function generateSequentialId() {
     const counterDoc = db.collection('counters').doc('studentCounter');
@@ -34,22 +38,26 @@ function handleStudentLogin(email, firstName, lastName) {
     studentDocRef.get().then((doc) => {
         if (!doc.exists) {
             // First-time login, generate custom student ID
-            const studentId = generateSequentialId(firstName, lastName);
-            studentDocRef.set({
-                studentId: studentId,
-                name: firstName + ' ' + lastName,
-                email: email,
-                registeredCompetitions: []
-            }).then(() => {
-                console.log("New student registered with ID:", studentId);
-            }).catch((error) => {
-                console.error("Error adding student: ", error);
-            });
+            
         } else {
             console.log("Student already exists:", doc.data().studentId);
         }
     }).catch((error) => {
         console.error("Error fetching student document: ", error);
+    });
+}
+
+function showmodal(){
+    const studentId = generateSequentialId(firstName, lastName);
+    studentDocRef.set({
+        studentId: studentId,
+        name: firstName + ' ' + lastName,
+        email: email,
+        registeredCompetitions: []
+    }).then(() => {
+        console.log("New student registered with ID:", studentId);
+    }).catch((error) => {
+        console.error("Error adding student: ", error);
     });
 }
 

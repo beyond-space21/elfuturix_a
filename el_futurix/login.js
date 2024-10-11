@@ -1,6 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-analytics.js";
 import { getAuth, signOut, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAekwrpB56A5Kib4H9YSwGMzeQap9ZMJAA",
@@ -15,12 +16,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
+const db = getFirestore(app);
 const provider = new GoogleAuthProvider();
 try {
   document.getElementById("log_in_btn").onclick=login;
   document.getElementById("log_out_btn").onclick=logout; 
 } catch (error){}
-
 
 function login() {
     signInWithPopup(auth, provider)
@@ -70,5 +71,23 @@ function get_details() {
             console.error("Error during sign-out:", error);
         });
 }
+
+function handleStudentLogin(email, firstName, lastName) {
+  const studentDocRef = db.collection('students').doc(email); // Using email as the document ID
+  studentDocRef.get().then((doc) => {
+      if (!doc.exists) {
+          // First-time login, generate custom student ID
+          
+      } else {
+          console.log("Student already exists:", doc.data().studentId);
+      }
+  }).catch((error) => {
+      console.error("Error fetching student document: ", error);
+  });
+}
+
+setTimeout(()=>{
+page_show(cur_page,"/el_futurix/get_details.html")
+},2000)
 
 export { login, get_details, logout};
