@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,7 @@
         /* Global styles */
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f4f4f9;
+            background-color: transparent;
             margin: 0;
             padding: 0;
             display: flex;
@@ -19,10 +20,11 @@
 
         .container {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Two columns: one for form, one for image */
+            grid-template-columns: 1fr 1fr;
+            /* Two columns: one for form, one for image */
             max-width: 1200px;
             width: 100%;
-            background-color: #fff;
+            background-color: #ffffff;
             padding: 40px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -32,12 +34,14 @@
         h2 {
             text-align: center;
             color: #333;
-            grid-column: 1 / -1; /* Span full width */
+            grid-column: 1 / -1;
+            /* Span full width */
         }
 
         form {
             display: grid;
-            grid-template-columns: 1fr; /* Single column for form fields */
+            grid-template-columns: 1fr;
+            /* Single column for form fields */
             gap: 20px;
         }
 
@@ -72,7 +76,8 @@
             border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
-            grid-column: 1 / -1; /* Span full width */
+            grid-column: 1 / -1;
+            /* Span full width */
         }
 
         input[type="submit"]:hover {
@@ -106,7 +111,8 @@
         /* Responsive styles */
         @media (max-width: 768px) {
             .container {
-                grid-template-columns: 1fr; /* Stack form and image vertically */
+                grid-template-columns: 1fr;
+                /* Stack form and image vertically */
             }
 
             h2,
@@ -117,11 +123,11 @@
         }
     </style>
 </head>
-<body>
 
+<body>
     <div class="container">
         <!-- Form Section -->
-        <form action="/submit-form" method="POST">
+        <form id="detailsForm" action="" method="">
             <h2>Profile</h2>
 
             <div class="form-group">
@@ -156,22 +162,27 @@
 
             <div class="form-group">
                 <label for="course-department">Course/Department:</label>
-                <input type="text" id="course-department" name="course-department" required>
+                <input type="text" id="course" name="course-department" required>
             </div>
 
             <div class="form-group">
                 <label for="year-of-study">Year of Study:</label>
-                <input type="number" id="year-of-study" name="year-of-study" min="1" max="5" required>
+                <input type="number" id="year" name="year-of-study" min="1" max="5" required>
             </div>
 
             <div class="form-group">
                 <label for="whatsapp-number">WhatsApp Number:</label>
-                <input type="tel" id="whatsapp-number" name="whatsapp-number" required>
+                <input type="tel" id="whatsapp" name="whatsapp-number" required>
             </div>
 
             <div class="form-group">
                 <label for="alt-contact-number">Alternate Contact Number:</label>
-                <input type="tel" id="alt-contact-number" name="alt-contact-number">
+                <input type="tel" id="phone" name="alt-contact-number">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="tel" id="email" name="email">
             </div>
 
             <div class="checkbox-group">
@@ -179,7 +190,7 @@
                 <label for="assurance">I assure that all the above mentioned details are true to my knowledge</label>
             </div>
 
-            <input type="submit" value="Submit">
+            <input id="submit" type="submit" value="Submit">
         </form>
 
         <!-- Image Section -->
@@ -188,5 +199,57 @@
         </div>
     </div>
 
+    <script type="module">
+        import { postFirstLogin, get_details } from "./reg.js"
+
+        get_details().then((userDetails) => {
+            if (userDetails) {
+                document.getElementById("student-name").value = userDetails.name;
+                document.getElementById("email").value = userDetails.email;
+                document.getElementById("designation").value = "Student";
+            } else {
+                console.log("No user is signed in.");
+                alert("login before registering...");
+            }
+        }).catch((error) => {
+            console.error("Error getting user details:", error);
+        });
+
+        document.getElementById("detailsForm").onsubmit = submit_form
+
+        var flg = false
+        function submit_form() {
+            event.preventDefault()
+            if(flg)return;
+            flg = true;
+            document.getElementById("submit").style.opacity = 0.5
+            document.getElementById("submit").style.color = 'black'
+            const obj = {
+                student_name: document.getElementById("student-name").value,
+                salutation: document.getElementById("salutation").value,
+                designation: document.getElementById("designation").value,
+                college_name: document.getElementById("college-name").value,
+                course: document.getElementById("course").value,
+                year: document.getElementById("year").value,
+                whatsapp: document.getElementById("whatsapp").value,
+                phone: document.getElementById("phone").value,
+                phone: document.getElementById("email").value
+            }
+
+            postFirstLogin(obj)
+                .then((successMessage) => {
+                    window.parent.postMessage("home", '*');
+                    alert("successfully registered!")
+                })
+                .catch((errorMessage) => {
+                    console.error(errorMessage);
+                    alert(errorMessage);
+                });
+        }
+
+
+    </script>
+
 </body>
+
 </html>

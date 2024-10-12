@@ -41,7 +41,7 @@
   <div id="site">
     <div class="top_nav">
       <img class="logo" src="el_futurix/img/logo.png" alt="">
-      <div class="pages" onclick="page_show(null,'home')" >Home</div>
+      <div class="pages" onclick="page_show(null,'home')">Home</div>
       <div class="pages" onclick="page_show(null,'competition')">Competitions</div>
       <div class="pages" onclick="page_show(null,'workshop')">Workshops</div>
       <div class="pages" onclick="page_show(null,'/el_futurix/timeline.html','Time line')">Time line</div>
@@ -67,7 +67,7 @@
       <div class="diag_a"></div>
     </div>
 
-    <div class="cont_sites" id="home">
+    <div class="cont_sites" style="display: block;" id="home">
       <div class="heading">Home</div>
       <div class="cards"></div>
     </div>
@@ -103,45 +103,51 @@
       <div id="menu_t" class="b"></div>
       <div class="c"></div>
 
-    <div id="menu_pop">
-      <div style="border-top: 0px;" class="menu_elm" onclick="page_show(null,'home')" >Home</div>
-      <div class="menu_elm" onclick="page_show(null,'competition')">Competitions</div>
-      <div class="menu_elm" onclick="page_show(null,'workshop')">Workshops</div>
-      <div class="menu_elm" onclick="page_show(null,'/el_futurix/timeline.html','Time line')">Time line</div>
-      <div class="menu_elm" onclick="page_show(null,'/el_futurix/aboutus.html','')">About Us</div>
-      <div class="menu_elm" onclick="page_show(null,'/el_futurix/contact.html','Contact')">Contact</div>
-      <div class="menu_elm" onclick="page_show(null,'/el_futurix/committee.html','Committee')">Committee</div>
-    
+      <div id="menu_pop">
+        <div style="border-top: 0px;" class="menu_elm" onclick="page_show(null,'home')">Home</div>
+        <div class="menu_elm" onclick="page_show(null,'competition')">Competitions</div>
+        <div class="menu_elm" onclick="page_show(null,'workshop')">Workshops</div>
+        <div class="menu_elm" onclick="page_show(null,'/el_futurix/timeline.html','Time line')">Time line</div>
+        <div class="menu_elm" onclick="page_show(null,'/el_futurix/aboutus.html','')">About Us</div>
+        <div class="menu_elm" onclick="page_show(null,'/el_futurix/contact.html','Contact')">Contact</div>
+        <div class="menu_elm" onclick="page_show(null,'/el_futurix/committee.html','Committee')">Committee</div>
+
+      </div>
+
+    </div>
+
   </div>
 
-</div>
-
-  </div>
-
-      <!-- Babylon.js Core -->
-      <script src="https://cdn.babylonjs.com/babylon.js"></script>
-      <!-- Babylon.js Loaders (for GLTF and other formats) -->
-      <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
-      <!-- Babylon.js Debug (for AxesViewer and other debugging tools) -->
-      <!-- <script src="https://cdn.babylonjs.com/debug/babylonjs.debug.js"></script> -->
+  <!-- Babylon.js Core -->
+  <script src="https://cdn.babylonjs.com/babylon.js"></script>
+  <!-- Babylon.js Loaders (for GLTF and other formats) -->
+  <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+  <!-- Babylon.js Debug (for AxesViewer and other debugging tools) -->
+  <!-- <script src="https://cdn.babylonjs.com/debug/babylonjs.debug.js"></script> -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.0.16/svg.min.js"></script>
   <script src="tran.js"></script>
   <script src="cards.js"></script>
   <script src="main.js" type="module"></script>
+  <script>
+
+    function menu_op() {
+      document.getElementById("menu_pop").style.display = 'block'
+      document.getElementById("menu_t").style.transform = 'rotate(15deg)'
+      document.getElementsByClassName("menu")[0].onclick = menu_cl
+    }
+
+    function menu_cl() {
+      document.getElementById("menu_pop").style.display = 'none'
+      document.getElementById("menu_t").style.transform = 'rotate(0deg)'
+      document.getElementsByClassName("menu")[0].onclick = menu_op
+    }
+
+    window.addEventListener('message', (event) => {
+      if(event.data == "home")
+      page_show(cur_page,"home")
+    });
+  </script>
 </body>
-<script>
 
-  function menu_op(){
-    document.getElementById("menu_pop").style.display = 'block'
-    document.getElementById("menu_t").style.transform = 'rotate(15deg)'
-    document.getElementsByClassName("menu")[0].onclick = menu_cl
-  }
-
-  function menu_cl(){
-    document.getElementById("menu_pop").style.display = 'none'
-    document.getElementById("menu_t").style.transform = 'rotate(0deg)'
-    document.getElementsByClassName("menu")[0].onclick = menu_op
-  }
-</script>
 </html>

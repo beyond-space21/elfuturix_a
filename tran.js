@@ -69,9 +69,9 @@ const createScene = () => {
   });
 
 
-  setInterval(() => {
-    console.log(camera.alpha, camera.beta, camera.radius);
-  }, 1000)
+  // setInterval(() => {
+  //   console.log(camera.alpha, camera.beta, camera.radius);
+  // }, 1000)
 
   setTimeout(()=>{
     cam = camera

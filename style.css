@@ -13,7 +13,7 @@ html,body{
 }
 
 body{
-  height: calc(100vh + 5px);
+  /* height: calc(100vh + 5px); */
 }
 
 
@@ -172,7 +172,7 @@ body{
   /* max-width: 500px; */
   height: calc(100vh - 120px);
   margin-bottom: 100px;  
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 #site .card{

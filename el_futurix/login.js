@@ -1,16 +1,16 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-analytics.js";
 import { getAuth, signOut, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
-import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
+import { getFirestore,getDoc,collection,doc} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAekwrpB56A5Kib4H9YSwGMzeQap9ZMJAA",
-    authDomain: "elfuturix-10101.firebaseapp.com",
-    projectId: "elfuturix-10101",
-    storageBucket: "elfuturix-10101.appspot.com",
-    messagingSenderId: "1001074017564",
-    appId: "1:1001074017564:web:3b9faa1c6bfc624622e6d9",
-    measurementId: "G-6Q55QC0CPF"
+  apiKey: "AIzaSyDULqoxGCXzqie03gmHrKt-BqJ-4lrtYCI",
+  authDomain: "elfuturix-562eb.firebaseapp.com",
+  projectId: "elfuturix-562eb",
+  storageBucket: "elfuturix-562eb.appspot.com",
+  messagingSenderId: "518115904118",
+  appId: "1:518115904118:web:c5214283690b6619b52d57",
+  measurementId: "G-DQW58LGMHR"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -32,6 +32,7 @@ function login() {
       document.getElementById("log_in_btn").style.display = "none"
       document.getElementById("log_out_btn").style.display = "block"
       document.getElementById("profile_btn").style.display = "block"
+      handleStudentLogin(user.email);
     }).catch((error) => {
       console.error("Error during sign-in:", error);
     });
@@ -42,6 +43,7 @@ function get_details() {
       onAuthStateChanged(auth, (user) => {
         if (user) {
           // User is signed in
+          handleStudentLogin(user.email);
           resolve({
             name: user.displayName,
             photo: user.photoURL, // Fixed photo to be photoURL
@@ -72,22 +74,19 @@ function get_details() {
         });
 }
 
-function handleStudentLogin(email, firstName, lastName) {
-  const studentDocRef = db.collection('students').doc(email); // Using email as the document ID
-  studentDocRef.get().then((doc) => {
-      if (!doc.exists) {
-          // First-time login, generate custom student ID
-          
+function handleStudentLogin(email) {
+  const studentDocRef = doc(collection(db, 'students'), email); // Correct way to reference a doc in a collection
+  getDoc(studentDocRef).then((docSnapshot) => {
+      if (!docSnapshot.exists()) {
+          page_show(cur_page, "/el_futurix/get_details.html");
       } else {
-          console.log("Student already exists:", doc.data().studentId);
+          console.log("Student already exists:", docSnapshot.data().studentId);
       }
   }).catch((error) => {
       console.error("Error fetching student document: ", error);
   });
 }
 
-setTimeout(()=>{
-page_show(cur_page,"/el_futurix/get_details.html")
-},2000)
+
 
 export { login, get_details, logout};

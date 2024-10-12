@@ -109,9 +109,9 @@ function page_show(from, to, hed = "") {
 }
 
 
-setTimeout(() => {
-    window.addEventListener("scroll", srl_trig);
-}, 10)
+// setTimeout(() => {
+//     window.addEventListener("scroll", srl_trig);
+// }, 10)
 
 function srl_trig() {
     if (cur_page == 'home') {
