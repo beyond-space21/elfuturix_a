@@ -91,13 +91,13 @@ body{
   cursor: pointer;
 }
 
-.profile:hover{
+/* .profile:hover{
   border-bottom-left-radius: 0;
 }
 
 .profile:hover .profile_pop{
   display: block;
-}
+} */
 
 .profile .a{
   margin-top: 10px;
@@ -177,8 +177,8 @@ body{
 
 #site .card{
   width: 250px;
-  /* height: 390px; */
-  height: fit-content;
+  height: 390px;
+  /* height: fit-content; */
   background-color: #d7fff4; /* Set the background color of the box */
   border: 1px solid #ccc; /* Add a border around the box */
   display: block; /* Display the box as a block element */
@@ -191,6 +191,7 @@ body{
   border-radius: 20px;
   margin: 30px;
   height: fit-content;
+  /* height: 150px; */
   padding: 10px;
   background-color: rgb(0, 0, 0);
   position: relative;
